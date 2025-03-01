@@ -17,8 +17,6 @@
 
 
 
-  <!-- INFO: main css -->
-  <link rel="stylesheet" href="style.css" />
 </head>
 
     <style>
@@ -45,6 +43,11 @@ html {
   --white-color: #fff;
   --black-color: #000;
   --p-color: #999;
+  --acent-color: #3752FD;
+  
+}
+.primary-color{
+  background-color: #f4f7ff;
 }
  .itmesCards{
   background-color: #f4f7ff;
@@ -60,22 +63,26 @@ html {
   max-width:  1380px;
   margin: 0 auto;
 }
-
+.cursorNotAllowed{
+  cursor: not-allowed !important;
+  pointer-events: none;
+  background: #c2c2c2 !important;
+}
     </style>
   </head>
 
   <body class="p-5 md:h-screen">
-    <!-- nav section -->
+    
     <header class="conatiner mx-auto">
       <div class="bg-white p-4  rounded-xl flex justify-between items-center">
         <div class="text-xl  flex justify-between items-center gap-2">
-          <img class="w-10 h-10" src="assets/logo.png" />
+          <img class="w-10 h-10   " src="assets/logo.png" />
           <span>Dev<span class="font-extrabold">Board</span></span>
         </div>
         <div class="flex items-center gap-8">
           <div class="flex items-center gap-4 bg-[#F4F7FF] py-2 px-4 rounded-3xl">
             <img class="w-5 h-5" src="assets/checkbox.png" alt="checkbox" />
-            <p class="text-black font-bold text-xl">23</p>
+            <p id="totalTask" class="text-black font-bold text-xl">23</p>
           </div>
 
           <button class="cursor-pointer p-3 bg-[#F4F7FF] rounded-full">
@@ -99,7 +106,7 @@ html {
             </div>
             <div>
               <h1 class="font-bold text-xl">Task Assigned</h1>
-              <span class="text-lg font-medium">6</span>
+              <span id="assignedTask" class="text-lg font-medium">6</span>
             </div>
           </div>
          
@@ -112,7 +119,7 @@ html {
               <div class=" bg-[#F4F7FF] p-2 rounded-full ">
                 <img class="w-5 h-5" src="assets/calender.png" alt="">
               </div>
-               <span class="font-medium text-sm">Thu 24 Feb 2025</span>
+               <span id="todayDate" class="font-medium text-sm">Thu 24 Feb 2025</span>
             </div>
           </div>
 
@@ -124,7 +131,7 @@ html {
                 
               <div class="taskCard itmesCards   ">
                   <span class="bg-white font-medium p-2 text-xs rounded-lg">Shope Ease</span>
-                  <h1 class="font-medium text-lg my-3">Fix Mobile Button Issue</h1>
+                  <h1 id="read" class="font-medium   taskTitle  text-lg my-3">Fix Mobile Button Issue</h1>
                   <div class="p-2 rounded-lg bg-white">
                     <p class="text-sm  line-clamp-2   
                      cursor-pointer hover:line-clamp-none">
@@ -136,13 +143,13 @@ html {
                       <p >Deathline</p>
                       <span class="text-xs font-normal" >21 March 2025</span>
                     </div>
-                    <button class="bg-[#3752FD] text-white text-sm py-2 px-4 rounded-md"> Complete</button>
+                    <button class="bg-[#3752FD] text-white text-sm py-2 px-4 rounded-md complete" > Complete</button>
                   </div>
                 </div>
 
                 <div class="taskCard itmesCards   ">
                   <span class="bg-white font-medium p-2 text-xs rounded-lg">CloudSync</span>
-                  <h1 class="font-medium text-lg my-3">Add Dark Mode</h1>
+                  <h1 class="font-medium  taskTitle  text-lg my-3">Add Dark Mode</h1>
                   <div class="p-2 rounded-lg bg-white">
                     <p class="text-sm line-clamp-2   
                      cursor-pointer hover:line-clamp-none ">
@@ -154,12 +161,12 @@ html {
                       <p >Deathline</p>
                       <span class="text-xs font-normal" >24 March 2025</span>
                     </div>
-                    <button class="bg-[#3752FD] text-white text-sm py-2 px-4 rounded-md"> Complete</button>
+                    <button class="bg-[#3752FD] text-white text-sm py-2 px-4 rounded-md complete" > Complete</button>
                   </div>
                 </div>
                 <div class="taskCard itmesCards   ">
                   <span class="bg-white font-medium p-2 text-xs rounded-lg">SwiftPay</span>
-                  <h1 class="font-medium text-lg my-3">Optimize  Home page </h1>
+                  <h1 class="font-medium  taskTitle  text-lg my-3">Optimize  Home page </h1>
                   <div class="p-2 rounded-lg bg-white">
                     <p class="text-sm line-clamp-2   
                      cursor-pointer hover:line-clamp-none">
@@ -172,14 +179,14 @@ html {
                       <p >Deathline</p>
                       <span class="text-xs font-normal" >29 March 2025</span>
                     </div>
-                    <button class="bg-[#3752FD] text-white text-sm py-2 px-4 rounded-md"> Complete</button>
+                    <button class="bg-[#3752FD] text-white text-sm py-2 px-4 rounded-md complete " > Complete</button>
                   </div>
                 </div>
                 
              
                 <div class="taskCard itmesCards   ">
                   <span class="bg-white font-medium p-2 text-xs rounded-lg">Meta</span>
-                  <h1 class="font-medium text-lg my-3"> Add new emoji🤲</h1>
+                  <h1 class="font-medium  taskTitle  text-lg my-3"> Add new emoji🤲</h1>
                   <div class="p-2 rounded-lg bg-white">
                     <p class="text-sm line-clamp-2   
                      cursor-pointer hover:line-clamp-none">
@@ -192,12 +199,12 @@ html {
                       <p >Deathline</p>
                       <span class="text-xs font-normal" >2 May 2025</span>
                     </div>
-                    <button class="bg-[#3752FD] text-white text-sm py-2 px-4 rounded-md"> Complete</button>
+                    <button class="bg-[#3752FD] text-white text-sm py-2 px-4 rounded-md complete " > Complete</button>
                   </div>
                 </div>
                 <div class="taskCard itmesCards   ">
                   <span class="bg-white font-medium p-2 text-xs rounded-lg">Google LLC</span>
-                  <h1 class="font-medium text-lg my-3">Integrate OpenAI API </h1>
+                  <h1 class="font-medium  taskTitle  text-lg my-3">Integrate OpenAI API </h1>
                   <div class="p-2 rounded-lg bg-white">
                     <p class="text-sm line-clamp-2   
                      cursor-pointer hover:line-clamp-none">
@@ -208,14 +215,14 @@ html {
                   <div class="flex items-center justify-between mt-3 gap-1">
                     <div class="font-medium text-sm">
                       <p >Deathline</p>
-                      <span class="text-xs font-normal" >5 May 2025</span>
+                      <span class="text-xs   font-normal" >5 May 2025</span>
                     </div>
-                    <button class="bg-[#3752FD] text-white text-sm py-2 px-4 rounded-md"> Complete</button>
+                    <button class="bg-[#3752FD] text-white text-sm py-2 px-4 rounded-md complete" > Complete</button>
                   </div>
                 </div>
                 <div class="taskCard itmesCards   ">
                   <span class="bg-white font-medium p-2 text-xs rounded-lg">Glassdoar</span>
-                  <h1 class="font-medium text-lg my-3">Improve Job searching </h1>
+                  <h1 class="font-medium  taskTitle  text-lg my-3">Improve Job searching </h1>
                   <div class="p-2 rounded-lg bg-white">
                     <p class="text-sm line-clamp-2   
                      cursor-pointer hover:line-clamp-none">
@@ -227,7 +234,7 @@ html {
                       <p >Deathline</p>
                       <span class="text-xs font-normal" >8 May 2025</span>
                     </div>
-                    <button class="bg-[#3752FD] text-white text-sm py-2 px-4 rounded-md"> Complete</button>
+                    <button class="bg-[#3752FD] text-white text-sm py-2 px-4 rounded-md complete" > Complete</button>
                   </div>
                 </div>
             </div>
@@ -240,9 +247,13 @@ html {
                 <img src="assets/activity.png" alt="">
                  <h1>Activity Log</h1>
               </div>
-              <button class="bg-[#3752FD] text-white py-2 px-4 rounded-md">Clear History</button>
+              <button onclick="clean()" class="bg-[#3752FD] text-white py-2 px-4 rounded-md">Clear History</button>
             </div>
             <div class="mt-4 border-2 border-dashed  border-[#3752FD33];"></div>
+
+            <div id="activityLog" class="mt-4 flex flex-col gap-4 ">
+              
+            </div>
           </div>
       </div>
     </section>
