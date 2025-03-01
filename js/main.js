@@ -1,8 +1,16 @@
 //TODO: BACKGROUND CHANGER 
 
+const bgColor = document.body;
 
-
-
+function btnTheme(){
+        const randomColor = Math.floor(Math.random() *10000)
+        document.getElementById('themeBtn').style.transform = "rotate(90deg)";
+        document.getElementById('themeBtn').style.transition  = "transform .3s ease-in-out";
+        bgColor.style.backgroundColor = "#"+ randomColor;
+ }
+document.getElementById('themeBtn').addEventListener('transitionend',function(){
+   themeBtn.style.transform = 'rotate(0)'
+})
 
 
 
