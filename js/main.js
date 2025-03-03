@@ -35,13 +35,16 @@ document.getElementById('themeBtn').addEventListener('transitionend',function(){
 
 // IDEA:TODAY TIME      
 
-const now = new Date();
-const onlyDate = now.toDateString('en-GB', { weekday: 'long' });
-    console.log(onlyDate);
-    const formattedDate = now.toLocaleDateString('en-GB', { day: '2-digit', month: 'short', year: '2-digit' });
-    const formattedTime = now.toLocaleTimeString('en-GB', { hour: '2-digit', minute: '2-digit', hour12: true });
+    const now = new Date();
+    const onlyDate = now.toDateString('en-GB', { weekday: 'long' });
+        console.log(onlyDate);
+        const formattedDate = now.toLocaleDateString('en-GB', { day: '2-digit', month: 'short', year: '2-digit' });
+        const formattedTime = now.toLocaleTimeString('en-GB', { hour: '2-digit', minute: '2-digit', hour12: true });
+
     const dateTime = `${formattedDate} ${formattedTime}`;
- document.getElementById('todayDate').innerText = `${onlyDate}  `
+        document.getElementById('todayDate').innerText = `${onlyDate}  `
+
+
       const task = taskTitles[i].innerText; //TODO:STORE THE ALL [i] TASK TITTLES 
       window.alert('You  Completed !✅ The ' + `${task}`); //TODO: ALERT WHEN COMPLETE A TASK
       btnComplete[i].classList.add('cursorNotAllowed') ; //TODO: AFTER ALERT DISABLE THE COMPELET BUTTON
